@@ -357,20 +357,21 @@
   .header {
     background-color: #262626;
     color: white;
+    height: 2.5rem;
     display: grid;
     grid-template-columns: 1fr 1fr; 
-    justify-content: center;
+    justify-items: center;
     align-items: center;
-    padding: 1rem 5rem;
+    padding: 0.5rem 0.5rem;
   }
 
   .header div {
     display: flex;
-    gap: 30px;
+    gap: 33px;
   }
 
   .section {
-    background-image: url('images/interior1.jpg');
+    background-image: linear-gradient(180deg, rgba(213,197,184,1) 0%, rgba(18,6,5,0.40948879551820727) 0%), url('images/interior1.jpg');
     background-size: cover;
     background-position: center;
   }
@@ -378,15 +379,32 @@
   .section {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding-bottom: 70px;
   }
-  .section p {
-    font-size: 2.5rem;
-    color: white;
-    margin-left: 50px;
-    font-weight: bold;
-    margin-top: 30px;
-    margin-bottom: 30px;
 
+  .section p {
+    color: white;
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-top: 0.7rem;
+    margin-left: 14.5rem;
+    margin-bottom: 3.7rem;;
+  }
+
+  .section div h, span {
+    font-weight: bold;
+  }
+
+  .section div p, h, span {
+    font-size: 2rem;
+    color: white;
+    margin-left: 9.7rem;
+    margin-top: 21px;
+    margin-bottom: 21px;
+  }
+
+  .section div span {
+    font-size: 1.3rem;
   }
 
  .section nav ul {
@@ -398,8 +416,9 @@
   .section nav ul li {
     text-decoration: none;
     list-style-type: none;
-    font-size: 1rem;
+    font-size: 0.7rem;
     color: white;
+    font-weight: bold;
   }
 
   .section nav ul li:last-child {
@@ -427,11 +446,29 @@
     font-size: 1.7rem;
   }
 
-  .info input {
-    width: 43%;
-    margin-left: 11rem;
+  .info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .info .keyword input {
+    width: 70%;
+    margin-left: 9rem;
     margin-top: 1rem;
-    padding: 5px;
+    padding: 7px;
+    padding-left: 19px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+   .info .keyword i {
+    position: absolute;
+    top: 28.5rem;
+    left: 9.2rem;
+  }
+
+  .info .button {
+    margin-top: 1rem;
   }
 
   .info button {
@@ -439,13 +476,6 @@
     padding: 10px;
     border-radius: 5px;
     margin-left: 9px;
-}
-
-  .info button:nth-child(4) {
-  }
-
-  .info button:nth-child(5) {
-
   }
 
   .info button:last-child {
