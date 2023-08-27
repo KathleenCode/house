@@ -1337,29 +1337,29 @@ img {
   .section .burger::after {
     display: block;
     content: ' ';
-    height: 7px;
-    width: 55px;
+    height: 9px;
+    width: 60px;
     background-color: orangered;
     transform-origin: left-center;
     transition: all 0.3s ease-in-out;
   }
   /* 45 degrees rotation when input is checked */
   .section .burger:has(input:checked)::before {
-    rotate: 45deg;
+    rotate: -45deg;
     width: 45px;
   }
   .section .burger:has(input:checked)::after {
-    rotate: -45deg;
+    rotate: 45deg;
     width: 45px;
   }
   .section .burger:has(input:checked) + nav ul {
     display: block;
     position: absolute;
-    top: 4rem;
+    top: 3rem;
     background-color: orange;
     left: 25rem;
-    right: 3rem;
-    bottom: 16rem;
+    right: 5rem;
+    bottom: 17.5rem;
     text-align: center;
     padding: 1rem;
     opacity: 1;
@@ -1368,7 +1368,7 @@ img {
   .section .burger:has(input:checked) + nav ul li{
     font-size: 0.9rem;
     color: rgb(134, 46, 134);
-    padding: 0.5rem;
+    padding: 0.3rem;
     border-bottom: 1px solid deeppink;
   }
   .section .burger:has(input:checked) {
@@ -1379,9 +1379,10 @@ img {
   .section .burger {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 4px;
     position: absolute;
     right: 70px;
+    top: 1rem;
   }
   .section .burger input {
     appearance: none;
@@ -1393,24 +1394,24 @@ img {
     width: 100vw;
   }
   .section p {
-    font-size: 1rem;
+    font-size: 1.3rem;
     margin-top: 0.5rem;
     margin-left: 12.3rem;
     margin-bottom: 3rem;
   }
   .section div p:nth-child(2) {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     width: 50vw;
     margin-left: 14.5rem;
   }
   .section div p:nth-child(3) {
-    font-size: 0.7rem;
+    font-size: 1rem;
     margin-left: 14.5rem;
     width: 63%;
     margin-left: 14.5rem;
   }
   .section div span {
-    font-size: 0.6rem;
+    font-size: 1rem;
     margin-left: 14.5rem;
   }
 
@@ -1420,32 +1421,23 @@ img {
   }
   .section p:nth-child(1) {
     margin-left: 4.5rem;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     padding-left: 1.1rem;
     margin-bottom: 0rem;
   }
   .section div p, span {
     font-size: 2rem;
     margin-left: 9.7rem;
-    margin-top: 21px;
-    margin-bottom: 21px;
+    margin-top: 17px;
+    margin-bottom: 1px;
   }
 
  .section nav ul {
    display: none;
    transition: all 4s ease-in;
   }
-
   .section nav ul li {
-    text-decoration: none;
-    list-style-type: none;
-    font-size: 0.75rem;
-    color: white;
-    font-weight: 300;
-  }
-
-  .section nav ul li:last-child {
-    color: #e09410;
+    font-size: 0.9rem;
   }
   .section div {
     margin-left: -136px;
@@ -1453,37 +1445,38 @@ img {
 
   .section div p:first-child {
     font-size: 0.6rem;
+    font-weight: thin;
   }
 
   .section div p:nth-child(2) {
     font-size: 1.3rem;
     width: 50vw;
+    font-weight: thin;
   }
-
   .section div p:nth-child(3) {
-    font-size: 0.6rem;
-    width: 37vw;
+    font-size: 0.9rem;
+    width: 40vw;
+    font-weight: thin;
   }
-
   .section div p:lastchild {
-    color: whitesmoke;
     font-size: 1.7rem;
+    font-weight: thin;
   }
   .info {
     grid-template-columns: 1fr;
-    height: 15vh;
+    height: 11vh;
   }
   .info .keyword input {
     width: 50vw;
     position: relative;
     left: 5rem;
-    top: 0.6rem;
+    top: 0.7rem;
     padding: 5.7px;
     padding-left: 2rem;
     font-size: 13px;
   }
   .info .keyword i {
-    top: 21.7rem;
+    top: 21.9rem;
     left: 5.5rem;
     font-size: small;
   }
@@ -1493,109 +1486,95 @@ img {
     padding: 0.3rem 2rem;
   }
   .info button {
-    background-color: transparent;
-    color: rgb(78, 71, 71);
     padding: 7px;
-    border-radius: 5px;
-    border: 1px solid rgb(78, 72, 72);
     margin-left: 1px;
     margin-top: 1rem;
     font-size: 0.7rem;
   }
   .ph {
-    margin: 0 -14rem;
+    margin: 0 -16rem;
   }
   .ph button {
     font-size: 2rem;
-    margin-top: 0rem;
+    margin-top: 1rem;
     padding: 5rem 5rem;
     margin-left: 0.3rem;
   }
   .ph .b {
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    padding-right: 20rem;
-    margin-bottom: 1rem;
+    padding-right: 24rem;
+    margin-bottom: 6rem;
+    margin-top: -1rem;
   }
   .ph .p p:first-child {
-    font-size: 1.9rem;
+    font-size: 1.7rem;
     margin-left: 21rem;
   }
   .ph .p p:nth-child(2) {
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-left: 5.1rem;
     width: 63vw;
   }
 .ph button {
-  font-size: 0.6rem;
+  font-size: 0.9rem;
   padding: 0.4rem 0.5rem;
 }
 .phome {
-  font-size: 0.8rem;
-  color: white;
+  font-size: 0.9rem;
 }
-
 .phome .pprice1, .pprice2, .pprice3, .pprice4 {
- font-size: 1rem;
+ font-size: 0.9rem;
 }
-
 .phome .pamt1, .pamt2, .pamt3, .pamt4 {
   z-index: 1;
   color: white;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 .phome .pprice1 {
   position: absolute;
-  top: 45rem;
-  left: 23.9rem;
+  top: 44rem;
+  left: 22rem;
 }
 .phome .pamt1 {
   position: absolute;
-  top: 53.7rem;
-  left: 8.3rem;
+  top: 53rem;
+  left: 6.5rem;
 }
-
 .phome .pprice2 {
   position: absolute;
-  top: 63.7rem;
-  left: 23.9rem;
+  top: 63rem;
+  left: 21.9rem;
 }
-
 .phome .pamt2 {
   position: absolute;
-  top: 72.5rem;
-  left: 8.3rem;
+  top: 71.5rem;
+  left: 7.2rem;
 }
-
 .phome .pprice3 {
   position: absolute;
-  top: 82.7rem;
-  left: 23.9rem;
+  top: 81.7rem;
+  left: 21.9rem;
 }
-
 .phome .pamt3 {
   position: absolute;
-  top: 110rem;
-  left: 8.3rem;
+  top: 90.1rem;
+  left: 7.5rem;
 }
-
 .phome .pprice4 {
   position: absolute;
-  top: 101rem;
-  left: 23.9rem;
+  top: 100.9rem;
+  left: 22rem;
 }
-
 .phome .pamt4 {
   position: absolute;
-  top: 90.9rem;
-  left: 8.3rem;
+  top: 108.9rem;
+  left: 7.5rem;
 }
 .Amazing {
   grid-template-columns: 1fr;
 }
 .ph .Amazing {
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin-left: 19rem;
   margin-right: 6rem;
   margin-top: 0rem;
@@ -1603,55 +1582,53 @@ img {
 }
 .ph .Amazing p:first-child {
   position: absolute;
-  bottom: -22.2rem;
+  bottom: -21.2rem;
   left: 9rem;
 }
 .ph .Amazing p:nth-child(2) {
   position: absolute;
-  bottom: -41rem;
+  bottom: -40rem;
   left: 9rem;
 }
 .ph .Amazing p:nth-child(3) {
   position: absolute;
-  bottom: -60rem;
-  left: 9rem;
+  bottom: -59rem;
+  left: 11rem;
 }
 .ph .Amazing p:nth-child(4) {
   position: absolute;
-  bottom: -78.5rem;
-  left: 7rem;
+  bottom: -77.5rem;
+  left: 11rem;
 }
 .ph .icon {
   grid-template-columns: 1fr;
   margin-left: 5.3rem;
   margin-right: 21rem;
 }
-
 .ph .icon p {
-  color: rgb(53, 50, 50);
-  font-size: 1rem;
+  font-size: 0.9rem;
   width: 100%;
   margin-left: 12rem;
   margin-right: 1rem;
 }
 .ph .icon p:first-child {
   position: absolute;
-  bottom: -22.7rem;
+  bottom: -21.7rem;
   left: -5rem;
 }
 .ph .icon p:nth-child(2) {
   position: absolute;
-  bottom: -41.2rem;
+  bottom: -40.2rem;
   left: -5rem;
 }
 .ph .icon p:nth-child(3) {
   position: absolute;
-  bottom: -60.2rem;
+  bottom: -59.2rem;
   left: -5rem;
 }
 .ph .icon p:nth-child(4) {
   position: absolute;
-  bottom: -78.7rem;
+  bottom: -77.7rem;
   left: -5rem;
 }
 .ph .names {
@@ -1661,29 +1638,29 @@ img {
 }
 .ph .names p {
   width: 100%;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   margin-top: 0.1rem;
   padding-top: 0.1rem;
   margin-bottom: 5rem;
 }
 .ph .names p:first-child {
   position: absolute;
-  bottom: -28.9rem;
+  bottom: -27.9rem;
   left: 7rem;
 }
 .ph .names p:nth-child(2) {
   position: absolute;
-  bottom: -47.1rem;
+  bottom: -46.3rem;
   left: 7rem;
 }
 .ph .names p:nth-child(3) {
   position: absolute;
-  bottom: -66.2rem;
+  bottom: -65.3rem;
   left: 7rem;
 }
 .ph .names p:nth-child(4) {
   position: absolute;
-  bottom: -84.9rem;
+  bottom: -83.9rem;
   left: 7rem;
 }
  .images {
@@ -1716,25 +1693,31 @@ img {
     background: linear-gradient(to bottom, transparent, black);
   }
 .team {
-  margin: 0 -13rem;
+  margin: 0 -16rem;
 }
 .team .staff {
     grid-template-columns: 1fr;
   }
 .team .intro p:first-child {
-  font-size: 1.9rem;
+  font-size: 2rem;
   margin-left: 21rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  font-weight: thin;
 }
 .team .intro p:nth-child(2) {
   font-size: 1rem;
-  width: 30rem;
+  width: 25rem;
   margin-left: 21rem;
+  margin-bottom: 3rem;
+  font-weight: thin;
 }
 .team img {
   height: 22rem;
   width: 23rem;
   left: 4rem;
   position: relative;
+  margin-bottom: 3rem;
 }
 .team .staff {
   position: relative;
@@ -1746,7 +1729,7 @@ img {
   background-color: black;
   position: absolute;
   left: 4rem;
-  bottom: 5rem;
+  bottom: 3rem;
   z-index: 1;
   opacity: 0.65;
   background: linear-gradient(to bottom, transparent, black);
@@ -1757,7 +1740,7 @@ img {
     width: 23rem;
     background-color: black;
     position: absolute;
-    bottom: 32.3rem;
+    bottom: 28.3rem;
     left: 4rem;
     z-index: 1;
     opacity: 0.45;
@@ -1782,19 +1765,21 @@ img {
     background-color: black;
     position: absolute;
     left: -7rem;
-    top: -5rem;
+    top: -6rem;
     z-index: -1;
     opacity: 0.65;
     background: linear-gradient(to bottom, transparent, black);
   }
 .staff .pname1, .pname2, .pname3, .pname4 {
   color: white;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  font-weight: thin;
 }
 
 .staff .ppost1, .ppost2, .ppost3, .ppost4 {
   color: white;  
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  font-weight: thin;
 }
 
 .team .staff .pname1 {
@@ -1813,179 +1798,176 @@ img {
 .team .staff .pname2 {
   position: absolute;
   left: 11rem;
-  top: 43.5rem;
+  top: 42.5rem;
   z-index: 4;
 }
 .team .staff .ppost2 {
   position: absolute;
   left: 10.9rem;
-  top: 45.3rem;
+  top: 44.3rem;
   z-index: 3;
 }
 
 .team .staff .pname3 {
   position: absolute;
   left: 10rem;
-  top: 70rem;
+  top: 68rem;
   z-index: 3;
 }
 .team .staff .ppost3 {
   position: absolute;
   left: 9.5rem;
-  top: 72rem;
+  top: 70rem;
   z-index: 2;
 }
 
 .team .staff .pname4 {
   position: absolute;
   left: 11.5rem;
-  top: 98rem;
+  top: 92rem;
   z-index: 3;
 }
 .team .staff .ppost4 {
   position: absolute;
   left: 10.5rem;
-  top: 100rem;
+  top: 94rem;
   z-index: 2;
 }
-
   .lotsofimages .limage {
     grid-template-columns: 1fr;
   }
   .lotsofimages {
-    margin: 0 -8rem;
+    margin: 0 -11rem;
   }
   .limagep p:first-child {
     font-size: 1.9rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: thin;
   }
-  
   .limagep p:last-child {
-    font-size: 0.9rem;
-    width: 40vw;
+    font-size: 1rem;
+    width: 70vw;
+    font-weight: thin;
   }
   .limage img {
     height: 15rem;
     width: 24rem;
   } 
   .a1, .a3, .a5, .a7, .a9, .a11, .a13, .a15, .a17 {
-    font-size: 1rem;
+    font-size: 0.9rem;
     z-index: 1;
   }
   .a1 {
-    top: 261.7rem;
+    top: 243.9rem;
   }
   .a3 {
-    top: 286.7rem;
+    top: 266.7rem;
   } 
   .a5 {
-    top: 305.9rem;
+    top: 288.9rem;
   }
   .a7 {
-    top: 328.5rem;
+    top: 311.5rem;
   }
   .a9 {
-    top: 350.7rem;
+    top: 333.7rem;
   }
   .a11 {
-    top: 372.9rem;
+    top: 356.9rem;
   }
   .a13 {
-    top: 395.7rem;
+    top: 379.7rem;
   }
   .a15 {
-    top: 417.7rem;
+    top: 401.7rem;
   }
   .a17 {
-    top: 440.7rem;
+    top: 423.9rem;
   }
   .a2, .a4, .a6, .a8, .a10, .a12, .a14, .a16, .a18 {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     padding: 3px;
     margin-left: 11.5rem;
     z-index: 1;
   }
   .a2 {
-    top: 261.7rem;
-    left: 14rem;
+    top: 243.9rem;
+    left: 11rem;
   }
   .a4 {
-    top: 286.7rem;
-    left: 14rem;
+    top: 266.7rem;
+    left: 11rem;
   }
   .a6 {
-    top: 305.9rem;
-    left: 14rem;
+    top: 288.9rem;
+    left: 11rem;
   }
   .a8 {
-    top: 328.5rem;
-    left: 14rem;
+    top: 311.5rem;
+    left: 11rem;
   }
   .a10 {
-    top: 350.7rem;
-    left: 14rem;
+    top: 333.5rem;
+    left: 11rem;
   }
   .a12 {
-    top: 372.9rem;
-    left: 14rem;
+    top: 356.9rem;
+    left: 11rem;
   }
   .a14 {
-    top: 395.7rem;
-    left: 14rem;
+    top: 379.7rem;
+    left: 11rem;
   }
   .a16 {
-    top: 417.7rem;
-    left: 14rem;
+    top: 402rem;
+    left: 11rem;
   }
   .a18 {
-    top: 440.7rem;
-    left: 14rem;
+    top: 424rem;
+    left: 11rem;
   }
   .allhp {
    width: 24rem;
   }
-  
   .allp p:first-child {
-    font-size: 0.9rem;
+    font-size: 1rem;
     padding-left: 2rem;
   }
-  
   .allto p:first-child {
-    font-size: 0.9rem;
+    font-size: 1rem;
     padding-top: 0;
   }
-  
   .allto p:nth-child(2) {
     font-size: 0.9rem;
   }
-  
   .allto {
     display: flex;
     gap: 50px;
     margin-top: 0rem;
     margin-bottom: 0.2rem;
   }
-  
   button {
-    font-size: 0.9rem;
-    margin-left: 22rem;
-    padding: 7px 30px;
+    font-size: 1rem;
+    margin-left: 16.2rem;
+    padding: 7px 45px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 .col3i {
   height: 125vh;
   width: 37rem;
   margin: 0;
 }
-
 .col3ip p:first-child {
-  font-size: 1.9rem;
-  padding-top: 3rem;
-  margin-left: 0;
+  font-size: 2rem;
+  padding-top: 4rem;
+  margin-left: -15rem;
 }
-
 .col3ip p:nth-child(2) {
   font-size: 0.9rem;
   margin-top: -10px;
-  margin-left: 0;
+  margin-left: -5.7rem;
 }
 .col3if {
   flex-direction: column;
@@ -2025,7 +2007,8 @@ img {
 .col3i1 p:nth-child(2) {
   font-size: 0.9rem;
   bottom: 13rem;
-  left: -8rem;
+  width: 50vw;
+  left: -5rem;
 }
 .col3i1 p:nth-child(3) {
   font-size: 0.8rem;
@@ -2043,12 +2026,11 @@ img {
   width: 55vw;
   bottom: -1.3rem;
   left: -8rem;
-
 }
 .col3i3 p:nth-child(2) {
   font-size: 0.9rem;
   bottom: -10rem;
-  left: -4rem;
+  left: -5rem;
 }
 .col3i3 p:nth-child(3) {
   font-size: 0.8rem;
@@ -2070,14 +2052,16 @@ img {
     margin-left: 24rem;
   }
   .ima {
-    margin: 0 -14rem;
+    margin: 0 -18rem;
   }
   .imatp p:first-child {
     font-size: 2rem;
     margin-left: 24rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
   }
   .imatp p:last-child {
-    font-size: 0.9rem;
+    font-size: 1rem;
     width: 50rem;
     margin-left: 24rem;
   }
@@ -2113,55 +2097,58 @@ img {
   }
   .footer1 {
     flex-direction: column;
-    padding: 0 10rem;
+    padding: 0 7rem;
   }
   .fo1 p:first-child {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
   .fo1 p:nth-child(2) {
-    font-size: 2.3rem;
+    font-size: 2rem;
   }
   .fo1 p:nth-child(3) {
-    font-size: 0.9rem;
-    width: 35vw;  
+    font-size: 1rem;
+    width: 50vw;  
+    margin-bottom: 0.7rem;
   }
   .fo1 p:nth-child(4) {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
   }
   .fo2 p:first-child {
-    font-size: 2rem;
+    font-size: 1.7rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
     width: 100vw;
   }
   .fo2 p:nth-child(2) {
-    font-size: 0.9rem;
+    font-size: 1rem;
     width: 100vw;
   }
   .fo2 p:nth-child(3) {
-    font-size: 0.9rem;
+    font-size: 1rem;
     width: 100vw;
   }
-  
   .fo2 p:nth-child(4) {
     font-size: 1rem;
   }
-  
   .fo3 p:first-child {
-    font-size: 2rem;
+    font-size: 1.7rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
   .fo3 ul dl {
     font-size: 1rem;
   }
-  
   .fo3 ul dt {
     font-size: 1rem;
   }
   .footer2 {
     flex-direction: column;
-    padding: 0 7rem;
+    padding: 0 2.5rem;
     height: 38vh;
   }
   .footer2 .foo1 {
-    padding: 0 5rem;
+    padding: 0 3.5rem;
     width: 100vw;
   }
   .footer2 .foo2 p:first-child {
@@ -2170,12 +2157,12 @@ img {
   }
   .footer2 .foo2 button + p {
     font-size: 1.3rem;
-    padding-left: 7rem;
+    padding-left: 4rem;
   }
   .footer2 .foo2 p:nth-child(4) {
     display: flex;
     flex-direction: row;
-    margin-left: 4.5rem;
+    margin-left: 2.5rem;
     font-size: 0.71rem;
   }
   .footer2 .foo2 p:nth-child(5) {
@@ -2195,12 +2182,12 @@ img {
   .header {
     grid-template-columns: 1fr;
     gap: 0;
-    padding-top: 1rem;
+    padding-top: 1.5rem;
     padding-bottom: 2.5rem;
   }
   .header div {
     font-size: 1.2rem;
-    margin-left: 17px;
+    margin-left: 130px;
     margin-right: 15em;
   }
   .section .burger::before,
@@ -2208,8 +2195,8 @@ img {
   .section .burger::after {
     display: block;
     content: ' ';
-    height: 7px;
-    width: 41px;
+    height: 9px;
+    width: 70px;
     background-color: orangered;
     transform-origin: left-center;
     transition: all 0.3s ease-in-out;
@@ -2252,7 +2239,8 @@ img {
     flex-direction: column;
     gap: 5px;
     position: absolute;
-    right: 7rem;
+    right: 9rem;
+    top: 3rem;
   }
   .section .burger input {
     appearance: none;
@@ -2264,24 +2252,24 @@ img {
     width: 100%;
   }
   .section p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin-top: 0.5rem;
     margin-left: 12.3rem;
     margin-bottom: 3rem;
   }
   .section div p:nth-child(2) {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     width: 50vw;
     margin-left: 14.5rem;
   }
   .section div p:nth-child(3) {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-left: 14.5rem;
     width: 73%;
     margin-left: 14.5rem;
   }
   .section div span {
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin-left: 14.5rem;
   }
   .section div p:nth-child(1) {
@@ -2289,17 +2277,16 @@ img {
   }
   .section p:nth-child(1) {
     margin-left: 4.5rem;
-    font-size: 2rem;
+    font-size: 2.1rem;
     padding-left: 1.1rem;
     margin-bottom: 2rem;
   }
   .section div p, span {
-    font-size: 2rem;
+    font-size: 2.1rem;
     margin-left: 9.7rem;
     margin-top: 21px;
     margin-bottom: 21px;
   }
-
  .section nav ul {
    display: none;
    transition: all 4s ease-in;
@@ -2307,21 +2294,17 @@ img {
   .section div {
     margin-left: -111px;
   }
-
   .section div p:first-child {
     font-size: 1.3rem;
   }
-
   .section div p:nth-child(2) {
     font-size: 2.2rem;
     width: 50vw;
   }
-
   .section div p:nth-child(3) {
     font-size: 1.1rem;
     width: 37vw;
   }
-
   .section div p:lastchild {
     color: whitesmoke;
     font-size: 1.7rem;
@@ -2333,16 +2316,16 @@ img {
   .info .keyword input {
     width: 47vw;
     position: relative;
-    left: 7rem;
+    left: 7.3rem;
     top: 0.6rem;
-    padding: 6px;
+    padding: 7px;
     margin-top: 0.6rem;
     padding-left: 3.1rem;
     font-size: 17px;
   }
   .info .keyword i {
-    top: 36.5rem;
-    left: 7.9rem;
+    top: 36.9rem;
+    left: 8rem;
     font-size: large;
   }
   .info .button {
@@ -2351,11 +2334,7 @@ img {
     padding: 0.3rem 2rem;
   }
   .info button {
-    background-color: transparent;
-    color: rgb(78, 71, 71);
     padding: 7px;
-    border-radius: 5px;
-    border: 1px solid rgb(78, 72, 72);
     margin-left: 15px;
     margin-top: 1.5rem;
     font-size: 1rem;
@@ -2364,7 +2343,7 @@ img {
     margin: 0 -14rem;
   }
   .ph button {
-    font-size: 1.1rem;
+    font-size: 2rem;
     margin-top: 0rem;
     padding: 5rem 5rem;
     margin-left: 0.3rem;
@@ -2373,8 +2352,8 @@ img {
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    padding-right: 26rem;
-    margin-bottom: 1rem;
+    padding-right: 22rem;
+    margin-bottom: 4rem;
   }
   .ph .p p:first-child {
     font-size: 2.3rem;
@@ -2386,18 +2365,16 @@ img {
     width: 63vw;
   }
 .ph button {
-  font-size: 0.6rem;
+  font-size: 1.3rem;
   padding: 0.4rem 0.5rem;
 }
 .phome {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: white;
 }
-
 .phome .pprice1, .pprice2, .pprice3, .pprice4 {
  font-size: 1rem;
 }
-
 .phome .pamt1, .pamt2, .pamt3, .pamt4 {
   z-index: 1;
   color: white;
@@ -2405,55 +2382,49 @@ img {
 }
 .phome .pprice1 {
   position: absolute;
-  top: 61.9rem;
-  left: 36.9rem;
+  top: 63.7rem;
+  left: 39.9rem;
 }
 .phome .pamt1 {
   position: absolute;
-  top: 70.9rem;
-  left: 4.3rem;
+  top: 71.9rem;
+  left: 7.3rem;
 }
-
 .phome .pprice2 {
   position: absolute;
-  top: 61.7rem;
-  left: 12.9rem;
+  top: 63.7rem;
+  left: 15.9rem;
 }
-
 .phome .pamt2 {
   position: absolute;
-  top: 70.9rem;
-  left: 28.3rem;
+  top: 71.9rem;
+  left: 31.3rem;
 }
-
 .phome .pprice3 {
   position: absolute;
-  top: 84.7rem;
-  left: 12.9rem;
+  top: 86.7rem;
+  left: 15.9rem;
 }
-
 .phome .pamt3 {
   position: absolute;
-  top: 94rem;
-  left: 4.3rem;
+  top: 95rem;
+  left: 7.3rem;
 }
-
 .phome .pprice4 {
   position: absolute;
-  top: 85rem;
-  left: 36.9rem;
+  top: 86.7rem;
+  left: 39.9rem;
 }
-
 .phome .pamt4 {
   position: absolute;
-  top: 93.9rem;
-  left: 28.3rem;
+  top: 95rem;
+  left: 31.3rem;
 }
 .Amazing {
   grid-template-columns: 1fr 1fr;
 }
 .ph .Amazing {
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-left: 19rem;
   margin-right: 6rem;
   margin-top: 0rem;
@@ -2461,23 +2432,23 @@ img {
 }
 .ph .Amazing p:first-child {
   position: absolute;
-  bottom: -20rem;
-  left: 5rem;
+  bottom: -22rem;
+  left: 8rem;
 }
 .ph .Amazing p:nth-child(2) {
   position: absolute;
-  bottom: -20rem;
-  left: 30rem;
+  bottom: -22rem;
+  left: 33rem;
 }
 .ph .Amazing p:nth-child(3) {
   position: absolute;
-  bottom: -43.5rem;
-  left: 9rem;
+  bottom: -45.5rem;
+  left: 11rem;
 }
 .ph .Amazing p:nth-child(4) {
   position: absolute;
-  bottom: -43.5rem;
-  left: 31rem;
+  bottom: -45.5rem;
+  left: 33rem;
 }
 .ph .icon {
   grid-template-columns: 1fr 1fr;
@@ -2487,30 +2458,30 @@ img {
 
 .ph .icon p {
   color: rgb(53, 50, 50);
-  font-size: 1rem;
+  font-size: 1.1rem;
   width: 100%;
   margin-left: 12rem;
   margin-right: 1rem;
 }
 .ph .icon p:first-child {
   position: absolute;
-  bottom: -20.7rem;
-  left: -8rem;
+  bottom: -22.7rem;
+  left: -6rem;
 }
 .ph .icon p:nth-child(2) {
   position: absolute;
-  bottom: -20.7rem;
-  left: 16rem;
+  bottom: -22.7rem;
+  left: 18rem;
 }
 .ph .icon p:nth-child(3) {
   position: absolute;
-  bottom: -44rem;
-  left: -7rem;
+  bottom: -46rem;
+  left: -6rem;
 }
 .ph .icon p:nth-child(4) {
   position: absolute;
-  bottom: -44rem;
-  left: 17rem;
+  bottom: -46rem;
+  left: 18rem;
 }
 .ph .names {
   grid-template-columns: 1fr 1fr;
@@ -2519,36 +2490,36 @@ img {
 }
 .ph .names p {
   width: 100%;
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin-top: 0.1rem;
   padding-top: 0.1rem;
   margin-bottom: 5rem;
 }
 .ph .names p:first-child {
   position: absolute;
-  bottom: -27.1rem;
-  left: 4rem;
+  bottom: -29.3rem;
+  left: 6rem;
 }
 .ph .names p:nth-child(2) {
   position: absolute;
-  bottom: -27.1rem;
-  left: 28rem;
+  bottom: -29.3rem;
+  left: 30rem;
 }
 .ph .names p:nth-child(3) {
   position: absolute;
-  bottom: -50.3rem;
-  left: 4rem;
+  bottom: -52.5rem;
+  left: 6rem;
 }
 .ph .names p:nth-child(4) {
   position: absolute;
-  bottom: -50.3rem;
-  left: 28rem;
+  bottom: -52.5rem;
+  left: 30rem;
 }
  .images {
     grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-content: center;
-    margin-left: 21rem;
+    margin-left: 28rem;
     margin-right: 35rem;
     margin-bottom: -6.9rem;
   }
@@ -2580,15 +2551,18 @@ img {
 }
 .team .staff {
     grid-template-columns: 1fr 1fr;
+    left: 2rem;
   }
 .team .intro p:first-child {
   font-size: 2.2rem;
-  margin-left: 27rem;
+  margin-left: 17rem;
+  margin-top: 5rem;
 }
 .team .intro p:nth-child(2) {
   font-size: 1.3rem;
   width: 30rem;
-  margin-left: 22rem;
+  margin-left: 17rem;
+  margin-bottom: 2rem;
 }
 .team img {
   height: 22rem;
@@ -2608,7 +2582,7 @@ img {
   left: -3rem;
   bottom: 5rem;
   z-index: 1;
-  opacity: 0.65;
+  opacity: 0.4;
   background: linear-gradient(to bottom, transparent, black);
   }
   .staff .staff1::after {
@@ -2620,7 +2594,7 @@ img {
     bottom: 32.3rem;
     left: -3rem;
     z-index: 1;
-    opacity: 0.45;
+    opacity: 0.3;
     background: linear-gradient(to bottom, transparent, black);
   }
   .staff .ppost1::before {
@@ -2641,10 +2615,10 @@ img {
     width: 19rem;
     background-color: black;
     position: absolute;
-    left: 18.5rem;
-    top: -5.7rem;
+    left: -4.8rem;
+    bottom: -29rem;
     z-index: -1;
-    opacity: 0.65;
+    opacity: 0.9;
     background: linear-gradient(to bottom, transparent, black);
   }
 .staff .pname1, .pname2, .pname3, .pname4 {
@@ -2669,30 +2643,28 @@ img {
 }
 .team .staff .pname2 {
   position: absolute;
-  left: 2rem;
-  top: 43.5rem;
   z-index: 4;
+  left: 25rem;
+  top: 17rem;
 }
 .team .staff .ppost2 {
   position: absolute;
-  left: 1.9rem;
-  top: 46rem;
   z-index: 3;
+  left: 25rem;
+  top: 19rem;
 }
-
 .team .staff .pname3 {
   position: absolute;
-  left: 25rem;
-  top: 17rem;
   z-index: 3;
+  left: 2rem;
+  top: 43.5rem;
 }
 .team .staff .ppost3 {
   position: absolute;
-  left: 23.5rem;
-  top: 19rem;
   z-index: 3;
+  left: 2rem;
+  top: 46rem;
 }
-
 .team .staff .pname4 {
   position: absolute;
   left: 25.5rem;
@@ -2707,19 +2679,23 @@ img {
 }
 .lotsofimages .limage {
     grid-template-columns: 1fr 1fr;
+    margin-right: 21rem;
+    position: relative;
+    left: 1rem;
   }
   .lotsofimages {
     margin: 0 -12rem;
   }
   .limagep p:first-child {
-    font-size: 2.1rem;
-    margin-left: 25rem;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    margin-left: 17rem;
   }
-  
   .limagep p:last-child {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
     width: 40%;
-    margin-left: 24rem;
+    margin-left: 17rem;
   }
   .limage img {
     height: 15rem;
@@ -2730,31 +2706,31 @@ img {
     z-index: 1;
   }
   .a1 {
-    top: 197rem;
+    top: 1rem;
   }
   .a3 {
-    top: 197rem;
+    top: 1rem;
   } 
   .a5 {
-    top: 220rem;
+    top: 25rem;
   }
   .a7 {
-    top: 220rem;
+    top: 25rem;
   }
   .a9 {
-    top: 244rem;
+    top: 49rem;
   }
   .a11 {
-    top: 244rem;
+    top: 49rem;
   }
   .a13 {
-    top: 267rem;
+    top: 75rem;
   }
   .a15 {
-    top: 267rem;
+    top: 75rem;
   }
   .a17 {
-    top: 290rem;
+    top: 99rem;
   }
   .a2, .a4, .a6, .a8, .a10, .a12, .a14, .a16, .a18 {
     font-size: 1.1rem;
@@ -2763,55 +2739,55 @@ img {
     z-index: 1;
   }
   .a2 {
-    top: 197rem;
-    left: 5rem;
+    top: 1rem;
+    left: 1rem;
   }
   .a4 {
-    top: 197rem;
-    left: 30rem;
+    top: 1rem;
+    left: 24rem;
   }
   .a6 {
-    top: 220rem;
-    left: 5rem;
+    top: 25rem;
+    left: 1rem;
   }
   .a8 {
-    top: 220rem;
-    left: 30rem;
+    top: 25rem;
+    left: 24rem;
   }
   .a10 {
-    top: 244rem;
-    left: 5rem;
+    top: 49rem;
+    left: 1rem;
   }
   .a12 {
-    top: 244rem;
-    left: 30rem;
+    top: 49rem;
+    left: 24rem;
   }
   .a14 {
-    top: 267rem;
-    left: 5rem;
+    top: 75rem;
+    left: 1rem;
   }
   .a16 {
-    top: 267rem;
-    left: 30rem;
+    top: 75rem;
+    left: 24rem;
   }
   .a18 {
-    top: 290rem;
-    left: 5rem;
+    top: 99rem;
+    left: 1rem;
   }
   .allhp {
    width: 21rem;
   }
   
   .allp p:first-child {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     padding-left: 2rem;
   }
   .allto p:first-child {
-    font-size: 1rem;
+    font-size: 1.1rem;
     padding-top: 0;
   }
   .allto p:nth-child(2) {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   .allto {
     display: flex;
@@ -2820,26 +2796,25 @@ img {
     margin-bottom: 0.2rem;
   }
   button {
-    font-size: 1rem;
-    margin-left: 33rem;
-    padding: 9px 30px;
+    font-size: 1.3rem;
+    margin-left: 17rem;
+    padding: 9px 50px;
+    margin-bottom: 4rem;
   }
 .col3i {
-  height: 90vh;
+  height: 103vh;
   width: 90%;
   margin: 0;
 }
-
 .col3ip p:first-child {
-  font-size: 1.9rem;
+  font-size: 2.1rem;
   padding-top: 3rem;
-  margin-left: 0;
+  margin-left: -27rem;
 }
-
 .col3ip p:nth-child(2) {
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin-top: -10px;
-  margin-left: 0;
+  margin-left: -16rem;
 }
 .col3if {
   flex-direction: column;
@@ -2861,60 +2836,59 @@ img {
   align-self: center;
 }
 .col3if i {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 .col3i1 i {
-  bottom: 25rem;
+  bottom: 24rem;
   left: 7rem;
 }
 .col3i2 i {
-  bottom: 13rem;
+  bottom: 9rem;
   left: 7rem;
 }
 .col3i3 i {
-  bottom: 2rem;
+  bottom: -5rem;
   left: 7rem;
 }
-
 .col3i1 p:nth-child(2) {
-  font-size: 1rem;
-  bottom: 22rem;
-  left: 2rem;
+  font-size: 1.2rem;
+  bottom: 20rem;
+  left: 0rem;
 }
 .col3i1 p:nth-child(3) {
-  font-size: 1rem;
+  font-size: 1.1rem;
   width: 55vw;
-  bottom: 19rem;
+  bottom: 17rem;
   left: -6rem;
 }
 .col3i2 p:nth-child(2) {
-  font-size: 1rem;
-  bottom: 9.8rem;
-  left: 4rem;
+  font-size: 1.2rem;
+  bottom: 5rem;
+  left: 3rem;
 }
 .col3i2 p:nth-child(3) {
-  font-size: 1rem;
+  font-size: 1.1rem;
   width: 55vw;
-  bottom: 7.2rem;
+  bottom: 2rem;
   left: -7rem;
 }
 .col3i3 p:nth-child(2) {
-  font-size: 1rem;
-  bottom: -1.1rem;
+  font-size: 1.2rem;
+  bottom: -9.1rem;
   left: 4rem;
 }
 .col3i3 p:nth-child(3) {
-  font-size: 1rem;
+  font-size: 1.1rem;
   width: 55vw;
-  bottom: -3.9rem;
+  bottom: -12rem;
   left: -7rem;
 }
 .col3if button {
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-left: 0rem;
   margin-right: 12.3rem;
   width: 70vw;
-  margin-top: 8rem;
+  margin-top: 11rem;
   margin-bottom: 1rem;
 }
 .imat {
@@ -2926,13 +2900,14 @@ img {
     margin-left: -14rem;
   }
   .imatp p:first-child {
-    font-size: 2.3rem;
-    margin-left: 31rem;
+    font-size: 2.5rem;
+    margin-left: 20rem;
+    margin-top: 0rem;
   }
   .imatp p:last-child {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     width: 50rem;
-    margin-left: 25rem;
+    margin-left: 20rem;
   }
   img {
     height: 15rem;
@@ -2942,100 +2917,99 @@ img {
     width: 20rem;
   }
   .im p:first-child {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
   .imgroup p:last-child {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
   .imgroup {
     display: flex;
   }
   .imgp p:first-child {
+    font-size: 1.3rem;
+    width: 19rem;
+  }
+  .imgp p:nth-child(2) {
     font-size: 1.1rem;
     width: 17rem;
   }
-  .imgp p:nth-child(2) {
-    font-size: 1rem;
-    width: 16rem;
-  }
   .imgp p:nth-child(3) {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   .imgp p:last-child {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
   .footer1 {
     flex-direction: column;
-    padding: 0 13rem;
+    padding: 0 7rem;
   }
   .fo1 p:first-child {
     font-size: 2rem;
   }
   .fo1 p:nth-child(2) {
-    font-size: 2.3rem;
+    font-size: 2.5rem;
   }
   .fo1 p:nth-child(3) {
-    font-size: 1rem;
+    font-size: 1.2rem;
     width: 70%;  
   }
   .fo1 p:nth-child(4) {
-    font-size: 1rem;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
   }
   .fo2 p:first-child {
     font-size: 2rem;
     width: 100vw;
   }
   .fo2 p:nth-child(2) {
-    font-size: 1rem;
+    font-size: 1.2rem;
     width: 100vw;
   }
   .fo2 p:nth-child(3) {
-    font-size: 1rem;
+    font-size: 1.2rem;
     width: 100vw;
   }
-  
   .fo2 p:nth-child(4) {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
-  
   .fo3 p:first-child {
     font-size: 2rem;
   }
   .fo3 ul dl {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
-  
   .fo3 ul dt {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   .footer2 {
     flex-direction: column;
-    padding: 0 7rem;
-    height: 38vh;
+    padding: 0 2rem;
+    height: 41vh;
   }
   .footer2 .foo1 {
     padding: 0 5rem;
+    font-size: 1.2rem;
     width: 100vw;
   }
   .footer2 .foo2 p:first-child {
-    font-size: 0.9rem;
-    padding: 0 3rem;
+    font-size: 1.2rem;
+    padding: 0 5rem;
     width: 100vw;
   }
   .footer2 .foo2 button + p {
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     padding-left: 7rem;
   }
   .footer2 .foo2 p:nth-child(4) {
     display: flex;
     flex-direction: row;
     margin-left: 4.5rem;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
   .footer2 .foo2 p:nth-child(5) {
     padding: 0 6rem;
     width: 100vw;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     padding-top: 3rem;
   }
   .footer2 .foo3 {
@@ -3044,16 +3018,11 @@ img {
     margin-bottom: 5rem;
   }
   .footer2 .foo2 button {
-    height: 3rem;
-    width: 3rem;
-    border: none;
-    border-radius: 50%;
-    background-color: #0057ff;
-    color: white;
+    height: 4rem;
+    width: 2rem;
     font-size: large;
-    cursor: pointer;
     position: absolute;
-    top: 7.3rem;
-    right: 37rem;
+    top: 9rem;
+    right: 39rem;
   }
 }
