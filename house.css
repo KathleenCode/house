@@ -431,7 +431,6 @@
 
  .section nav ul {
    display: flex;
-   flex-direction: end;
    gap: 30px;
   }
 
@@ -448,7 +447,6 @@
   }
   .section div {
     font-size: 1.5rem;
-    margin-left: 100px;
   }
 
   .section div p:first-child {
@@ -1324,103 +1322,105 @@ img {
 @media only screen and (max-width: 600px) {
   .header {
     grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
     gap: 0;
     padding-top: 1rem;
   }
   .header div {
     font-size: 0.8rem;
-    margin-left: 70px;
-    margin-right: 15em;
+    justify-content: center;
+    align-items: center;
   }
-  .section .burger::before,
-  .section .burger input,
-  .section .burger::after {
-    display: block;
-    content: ' ';
-    height: 9px;
-    width: 60px;
-    background-color: orangered;
-    transform-origin: left-center;
-    transition: all 0.3s ease-in-out;
+
+  /* hamburger menu */
+  .burger::before,
+  .burger::after,
+  .burger input[type = "checkbox"] {
+      content: "";
+      width: 60px;
+      height: 9px;
+      background-color: #b47e18;
+      display: block;
+      transform-origin: left center;
+      transition: all 0.3s ease-in-out;
   }
-  /* 45 degrees rotation when input is checked */
-  .section .burger:has(input:checked)::before {
-    rotate: -45deg;
-    width: 45px;
-  }
-  .section .burger:has(input:checked)::after {
-    rotate: 45deg;
-    width: 45px;
-  }
-  .section .burger:has(input:checked) + nav ul {
-    display: block;
-    position: absolute;
-    top: 3rem;
-    background-color: orange;
-    left: 25rem;
-    right: 5rem;
-    bottom: 17.5rem;
-    text-align: center;
-    padding: 1rem;
-    opacity: 1;
-    transition: all 1s ease-in
-  }
-  .section .burger:has(input:checked) + nav ul li{
-    font-size: 0.9rem;
-    color: rgb(134, 46, 134);
-    padding: 0.3rem;
-    border-bottom: 1px solid deeppink;
-  }
-  .section .burger:has(input:checked) {
-    background-color: rgb(189, 68, 68);
-    width: 0;
-    opacity: 0;
-  }
-  .section .burger {
+  .burger {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 5px;
     position: absolute;
-    right: 70px;
+    right: 50px;
     top: 1rem;
+    cursor: pointer;
+} 
+  .burger input {
+      appearance: none;
   }
-  .section .burger input {
-    appearance: none;
+  .burger input:checked {
+      opacity: 0;
+      width: 0;
   }
+  /* 45 degrees rotation when input is checked */
+  .burger:has(input:checked)::before {
+      rotate: 45deg;
+      width: 43px; 
+  }
+  .burger:has(input:checked)::after {
+      rotate: -45deg; 
+      width: 43px; 
+  } 
+
+  /* display: block; this shows the nav that was hidden  */
+  .burger:has(input:checked) + ul {
+       display: block;                                
+       top: 1rem; 
+       background-color: #945e3f;
+       position: absolute; 
+       left: 0;
+       right: 0; 
+       text-align: center;
+       padding: 1rem 0;
+       opacity: 1; 
+       transition: all 1s ease-in; 
+  } 
+  .burger:has(input:checked) + ul li {
+    font-size: 1rem;
+    color: rgb(72, 150, 41);
+    padding: 0.3rem;
+    border-bottom: 1px solid rgb(155, 39, 101);
+  }
+  
+  /* hamburger menu */
+
   .section {
     grid-template-columns: 1fr;
     padding-top: 2rem;
-    height: 28vh;
+    height: 31vh;
     width: 100vw;
+    position: relative;
   }
   .section p {
     font-size: 1.3rem;
-    margin-top: 0.5rem;
-    margin-left: 12.3rem;
-    margin-bottom: 3rem;
   }
   .section div p:nth-child(2) {
     font-size: 1.5rem;
     width: 50vw;
-    margin-left: 14.5rem;
   }
   .section div p:nth-child(3) {
     font-size: 1rem;
-    margin-left: 14.5rem;
     width: 63%;
-    margin-left: 14.5rem;
   }
   .section div span {
     font-size: 1rem;
-    margin-left: 14.5rem;
   }
 
   .section div p:nth-child(1) {
-    margin-left: 13rem;
+    margin-left: 9rem;
 
   }
   .section p:nth-child(1) {
-    margin-left: 4.5rem;
+    margin-left: 1.5rem;
     font-size: 1.5rem;
     padding-left: 1.1rem;
     margin-bottom: 0rem;
@@ -1440,7 +1440,7 @@ img {
     font-size: 0.9rem;
   }
   .section div {
-    margin-left: -136px;
+    margin-left: -87px;
   }
 
   .section div p:first-child {
@@ -1481,9 +1481,7 @@ img {
     font-size: small;
   }
   .info .button {
-    margin-left: 3rem;
-    margin-right: 1rem;
-    padding: 0.3rem 2rem;
+    padding: 0.5rem 1rem;
   }
   .info button {
     padding: 7px;
@@ -1502,18 +1500,21 @@ img {
   }
   .ph .b {
     display: flex;
-    padding-right: 24rem;
-    margin-bottom: 6rem;
-    margin-top: -1rem;
+    padding-right: 19rem;
+    text-align: center;
+    padding-bottom: 6rem;
   }
   .ph .p p:first-child {
     font-size: 1.7rem;
-    margin-left: 21rem;
+    text-align: center;
+    margin-left: 3rem;
   }
   .ph .p p:nth-child(2) {
     font-size: 1rem;
-    margin-left: 5.1rem;
-    width: 63vw;
+    margin-left: 4rem;
+    text-align: center;
+    padding-bottom: 0;
+    width: 79vw;
   }
 .ph button {
   font-size: 0.9rem;
@@ -1532,42 +1533,42 @@ img {
 }
 .phome .pprice1 {
   position: absolute;
-  top: 44rem;
-  left: 22rem;
+  top: 53rem;
+  left: 15rem;
 }
 .phome .pamt1 {
   position: absolute;
-  top: 53rem;
-  left: 6.5rem;
+  top: 62rem;
+  left: 7rem;
 }
 .phome .pprice2 {
   position: absolute;
-  top: 63rem;
-  left: 21.9rem;
+  top: 73rem;
+  left: 15.9rem;
 }
 .phome .pamt2 {
   position: absolute;
-  top: 71.5rem;
+  top: 81.5rem;
   left: 7.2rem;
 }
 .phome .pprice3 {
   position: absolute;
-  top: 81.7rem;
-  left: 21.9rem;
+  top: 92.7rem;
+  left: 15.9rem;
 }
 .phome .pamt3 {
   position: absolute;
-  top: 90.1rem;
+  top: 101.1rem;
   left: 7.5rem;
 }
 .phome .pprice4 {
   position: absolute;
-  top: 100.9rem;
-  left: 22rem;
+  top: 111.9rem;
+  left: 16rem;
 }
 .phome .pamt4 {
   position: absolute;
-  top: 108.9rem;
+  top: 119.9rem;
   left: 7.5rem;
 }
 .Amazing {
@@ -1582,23 +1583,23 @@ img {
 }
 .ph .Amazing p:first-child {
   position: absolute;
-  bottom: -21.2rem;
-  left: 9rem;
+  bottom: -13rem;
+  left: 7rem;
 }
 .ph .Amazing p:nth-child(2) {
   position: absolute;
-  bottom: -40rem;
-  left: 9rem;
+  bottom: -32.7rem;
+  left: 8rem;
 }
 .ph .Amazing p:nth-child(3) {
   position: absolute;
-  bottom: -59rem;
-  left: 11rem;
+  bottom: -51.5rem;
+  left: 9rem;
 }
 .ph .Amazing p:nth-child(4) {
   position: absolute;
-  bottom: -77.5rem;
-  left: 11rem;
+  bottom: -70.9rem;
+  left: 10rem;
 }
 .ph .icon {
   grid-template-columns: 1fr;
@@ -1613,23 +1614,23 @@ img {
 }
 .ph .icon p:first-child {
   position: absolute;
-  bottom: -21.7rem;
+  bottom: -13.3rem;
   left: -5rem;
 }
 .ph .icon p:nth-child(2) {
   position: absolute;
-  bottom: -40.2rem;
+  bottom: -32.7rem;
   left: -5rem;
 }
 .ph .icon p:nth-child(3) {
   position: absolute;
-  bottom: -59.2rem;
+  bottom: -51.9rem;
   left: -5rem;
 }
 .ph .icon p:nth-child(4) {
   position: absolute;
-  bottom: -77.7rem;
-  left: -5rem;
+  bottom: -71.3rem;
+  left: -4rem;
 }
 .ph .names {
   grid-template-columns: 1fr;
@@ -1645,36 +1646,36 @@ img {
 }
 .ph .names p:first-child {
   position: absolute;
-  bottom: -27.9rem;
+  bottom: -19.5rem;
   left: 7rem;
 }
 .ph .names p:nth-child(2) {
   position: absolute;
-  bottom: -46.3rem;
+  bottom: -38.7rem;
   left: 7rem;
 }
 .ph .names p:nth-child(3) {
   position: absolute;
-  bottom: -65.3rem;
+  bottom: -58rem;
   left: 7rem;
 }
 .ph .names p:nth-child(4) {
   position: absolute;
-  bottom: -83.9rem;
-  left: 7rem;
+  bottom: -77.3rem;
+  left: 9rem;
 }
  .images {
-    grid-template-columns: 1fr;
-    margin-left: 15.5rem;
-    margin-right: 15rem; 
-    margin-bottom: -6.9rem;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-content: center;
   }
   .images img {
     height: 13rem;
-    width: 24rem;
-    margin-bottom: 5.5rem;
-    margin-top: 0rem;
-    margin-left: 5rem;
+    width: 17rem;
+    text-align: center;
+    padding-left: 5rem;
+    padding-bottom: 5.5rem;
+    position: relative;
   }
   .images1 {
     position: relative;
@@ -1683,38 +1684,39 @@ img {
   .images1::before {
     content: '';
     height: 9rem;
-    width: 24rem;
+    width: 17rem;
     background-color: black;
     position: absolute;
-    bottom: 12.7rem;
+    bottom: 13.3rem;
     left: 5rem;
     z-index: 1;
     opacity: 0.65;
     background: linear-gradient(to bottom, transparent, black);
   }
 .team {
-  margin: 0 -16rem;
+  margin: 0 -17rem;
 }
 .team .staff {
     grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
   }
 .team .intro p:first-child {
   font-size: 2rem;
-  margin-left: 21rem;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
+  text-align: center;
+  padding-right: 17rem;
   font-weight: thin;
 }
 .team .intro p:nth-child(2) {
   font-size: 1rem;
-  width: 25rem;
-  margin-left: 21rem;
-  margin-bottom: 3rem;
+  width: 19rem;
+  text-align: center;
+  padding-left: 5rem;
   font-weight: thin;
 }
 .team img {
-  height: 22rem;
-  width: 23rem;
+  height: 21rem;
+  width: 19rem;
   left: 4rem;
   position: relative;
   margin-bottom: 3rem;
@@ -1725,7 +1727,7 @@ img {
 .staff .staff1::before {
   content: '';
   height: 9rem;
-  width: 23rem;
+  width: 19rem;
   background-color: black;
   position: absolute;
   left: 4rem;
@@ -1737,10 +1739,10 @@ img {
   .staff .staff1::after {
     content: '';
     height: 9rem;
-    width: 23rem;
+    width: 19rem;
     background-color: black;
     position: absolute;
-    bottom: 28.3rem;
+    bottom: 27.3rem;
     left: 4rem;
     z-index: 1;
     opacity: 0.45;
@@ -1749,10 +1751,10 @@ img {
   .staff .ppost1::before {
     content: '';
     height: 9rem;
-    width: 23rem;
+    width: 19rem;
     background-color: black;
     position: absolute;
-    top: -6rem;
+    top: -7rem;
     left: -6.5rem;
     z-index: -1;
     opacity: 0.65;
@@ -1761,10 +1763,10 @@ img {
   .staff .ppost2::before {
     content: '';
     height: 9rem;
-    width: 23rem;
+    width: 19rem;
     background-color: black;
     position: absolute;
-    left: -7rem;
+    left: -6rem;
     top: -6rem;
     z-index: -1;
     opacity: 0.65;
@@ -1797,93 +1799,96 @@ img {
 
 .team .staff .pname2 {
   position: absolute;
-  left: 11rem;
-  top: 42.5rem;
+  left: 10rem;
+  top: 40.5rem;
   z-index: 4;
 }
 .team .staff .ppost2 {
   position: absolute;
-  left: 10.9rem;
-  top: 44.3rem;
+  left: 9.9rem;
+  top: 42.3rem;
   z-index: 3;
 }
 
 .team .staff .pname3 {
   position: absolute;
   left: 10rem;
-  top: 68rem;
+  top: 65rem;
   z-index: 3;
 }
 .team .staff .ppost3 {
   position: absolute;
   left: 9.5rem;
-  top: 70rem;
+  top: 67rem;
   z-index: 2;
 }
 
 .team .staff .pname4 {
   position: absolute;
-  left: 11.5rem;
-  top: 92rem;
+  left: 9.5rem;
+  top: 90rem;
   z-index: 3;
 }
 .team .staff .ppost4 {
   position: absolute;
-  left: 10.5rem;
-  top: 94rem;
+  left: 9.5rem;
+  top: 92rem;
   z-index: 2;
 }
   .lotsofimages .limage {
     grid-template-columns: 1fr;
+    place-items: center;
   }
   .lotsofimages {
-    margin: 0 -11rem;
+    margin: 0 -12rem;
   }
   .limagep p:first-child {
-    font-size: 1.9rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    font-size: 1.7rem;
+    padding-right: 12rem;
+    text-align: center;
     font-weight: thin;
   }
   .limagep p:last-child {
     font-size: 1rem;
-    width: 70vw;
+    text-align: center;
+    width: 71vw;
     font-weight: thin;
   }
   .limage img {
-    height: 15rem;
-    width: 24rem;
+    height: 13rem;
+    width: 18.5rem;
+    position: relative;
   } 
   .a1, .a3, .a5, .a7, .a9, .a11, .a13, .a15, .a17 {
     font-size: 0.9rem;
     z-index: 1;
   }
   .a1 {
-    top: 243.9rem;
-  }
+    top: 261.9rem; 
+   }
   .a3 {
-    top: 266.7rem;
+    top: 282.7rem;  
   } 
   .a5 {
-    top: 288.9rem;
+    top: 302.9rem;  
   }
   .a7 {
-    top: 311.5rem;
+    top: 323.5rem;  
   }
   .a9 {
-    top: 333.7rem;
+    top: 344.7rem;  
   }
   .a11 {
-    top: 356.9rem;
-  }
+    top: 364.9rem; 
+   }
   .a13 {
-    top: 379.7rem;
+    top: 385.7rem;  
   }
   .a15 {
-    top: 401.7rem;
+    top: 405.7rem;  
   }
   .a17 {
-    top: 423.9rem;
+    top: 426.9rem;  
   }
   .a2, .a4, .a6, .a8, .a10, .a12, .a14, .a16, .a18 {
     font-size: 0.9rem;
@@ -1892,43 +1897,43 @@ img {
     z-index: 1;
   }
   .a2 {
-    top: 243.9rem;
-    left: 11rem;
+    top: 261.9rem;
+    left: 5rem;
   }
   .a4 {
-    top: 266.7rem;
-    left: 11rem;
+    top: 282.7rem;
+    left: 5rem;
   }
   .a6 {
-    top: 288.9rem;
-    left: 11rem;
+    top: 302.9rem;
+    left: 5rem;
   }
   .a8 {
-    top: 311.5rem;
-    left: 11rem;
+    top: 323.5rem;
+    left: 5rem;
   }
   .a10 {
-    top: 333.5rem;
-    left: 11rem;
+    top: 344.5rem;
+    left: 5rem;
   }
   .a12 {
-    top: 356.9rem;
-    left: 11rem;
+    top: 364.9rem;
+    left: 5rem;
   }
   .a14 {
-    top: 379.7rem;
-    left: 11rem;
+    top: 385.7rem;
+    left: 5rem;
   }
   .a16 {
-    top: 402rem;
-    left: 11rem;
+    top: 406rem;
+    left: 5rem;
   }
   .a18 {
-    top: 424rem;
-    left: 11rem;
+    top: 427rem;
+    left: 5rem;
   }
   .allhp {
-   width: 24rem;
+   width: 19rem;
   }
   .allp p:first-child {
     font-size: 1rem;
@@ -1955,88 +1960,95 @@ img {
     margin-bottom: 2rem;
   }
 .col3i {
-  height: 125vh;
+  height: 95vh;
   width: 37rem;
-  margin: 0;
+  margin-left: -5rem;
 }
 .col3ip p:first-child {
   font-size: 2rem;
-  padding-top: 4rem;
-  margin-left: -15rem;
+  padding-right: 5rem;
+  padding-top: 2rem;
 }
 .col3ip p:nth-child(2) {
   font-size: 0.9rem;
-  margin-top: -10px;
-  margin-left: -5.7rem;
+  padding-bottom: 4rem;
+  padding-left: 5rem;
+  width: 45%;
 }
 .col3if {
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
+  position: relative;
 }
 .col3i1 {
   background: whitesmoke;
   width: 70vw;
   align-self: center;
+  position: relative;
 }
 .col3i2 {
   background: whitesmoke;
   width: 70vw;
   align-self: center;
+  position: relative;
 }
 .col3i3 {
   background: whitesmoke;
   width: 70vw;
   align-self: center;
+  position: relative;
 }
 .col3if i {
   font-size: 2rem;
 }
 .col3i1 i {
-  bottom: 16rem;
-  left: -1.5rem;
+  bottom: 8rem;
+  left: 7.5rem;
 }
 .col3i2 i {
-  bottom: 4.5rem;
-  left: -1.5rem;
+  bottom: 7.5rem;
+  left: 7.5rem;
 }
 .col3i3 i {
-  bottom: -7rem;
-  left: -1.5rem;
+  bottom: 8rem;
+  left: 7.5rem;
 }
 
 .col3i1 p:nth-child(2) {
   font-size: 0.9rem;
-  bottom: 13rem;
+  bottom: 5rem;
   width: 50vw;
-  left: -5rem;
+  left: 3rem;
 }
 .col3i1 p:nth-child(3) {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   width: 55vw;
-  bottom: 10rem;
-  left: -9rem;
+  bottom: 2rem;
+  left: 2rem;
 }
 .col3i2 p:nth-child(2) {
   font-size: 0.9rem;
-  bottom: 1.7rem;
-  left: -5rem;
+  bottom: 4.7rem;
+  left: 6rem;
 }
 .col3i2 p:nth-child(3) {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   width: 55vw;
-  bottom: -1.3rem;
-  left: -8rem;
+  bottom: 1.7rem;
+  left: 2rem;
 }
 .col3i3 p:nth-child(2) {
   font-size: 0.9rem;
-  bottom: -10rem;
-  left: -5rem;
+  bottom: 5rem;
+  left: 6rem;
 }
 .col3i3 p:nth-child(3) {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   width: 55vw;
-  bottom: -13rem;
-  left: -8rem;
+  bottom: 2rem;
+  left: 2rem;
 }
 .col3if button {
   font-size: 0.8rem;
@@ -2049,28 +2061,29 @@ img {
 .imat {
     grid-template-columns: 1fr;
     gap: 1rem;
-    margin-left: 24rem;
+    place-items: center;
+    margin-right: 17rem;
   }
   .ima {
     margin: 0 -18rem;
   }
   .imatp p:first-child {
     font-size: 2rem;
-    margin-left: 24rem;
-    margin-top: 0;
-    margin-bottom: 1rem;
+    text-align: center;
+    padding-right: 15rem;
   }
   .imatp p:last-child {
     font-size: 1rem;
-    width: 50rem;
-    margin-left: 24rem;
+    width: 21rem;
+    text-align: center;
+    padding-left: 3.9rem;
   }
   img {
-    height: 15rem;
-    width: 21rem;
+    height: 13rem;
+    width: 17rem;
   }
   .imat div {
-    width: 21.5rem;
+    width: 17.5rem;
   }
   .im p:first-child {
     font-size: 0.8rem;
@@ -2082,15 +2095,15 @@ img {
     display: flex;
   }
   .imgp p:first-child {
-    font-size: 1rem;
-    width: 19rem;
+    font-size: 0.9rem;
+    width: 16rem;
   }
   .imgp p:nth-child(2) {
-    font-size: 0.9rem;
-    width: 17rem;
+    font-size: 0.8rem;
+    width: 16rem;
   }
   .imgp p:nth-child(3) {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
   .imgp p:last-child {
     font-size: 0.7rem;
@@ -2178,77 +2191,84 @@ img {
 }
 
 
-@media only screen and (min-width: 601px) and (max-width: 900px) {
+@media only screen and (min-width: 601px) and (max-width: 1025px) {
   .header {
     grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
     gap: 0;
     padding-top: 1.5rem;
     padding-bottom: 2.5rem;
   }
   .header div {
     font-size: 1.2rem;
-    margin-left: 130px;
-    margin-right: 15em;
+    align-items: center;
+    justify-content: center;
   }
-  .section .burger::before,
-  .section .burger input,
-  .section .burger::after {
-    display: block;
-    content: ' ';
-    height: 9px;
-    width: 70px;
-    background-color: orangered;
-    transform-origin: left-center;
-    transition: all 0.3s ease-in-out;
+  
+  /* hamburger menu */
+  .burger::before,
+  .burger::after,
+  .burger input[type = "checkbox"] {
+      content: "";
+      width: 60px;
+      height: 9px;
+      background-color: #b47e18;
+      display: block;
+      transform-origin: left center;
+      transition: all 0.3s ease-in-out;
   }
-  /* 45 degrees rotation when input is checked */
-  .section .burger:has(input:checked)::before {
-    rotate: 45deg;
-    width: 45px;
-  }
-  .section .burger:has(input:checked)::after {
-    rotate: -45deg;
-    width: 45px;
-  }
-  .section .burger:has(input:checked) + nav ul {
-    display: block;
-    position: absolute;
-    top: 4rem;
-    background-color: #fe6b01;
-    left: 30rem;
-    right: 15rem;
-    bottom: 33rem;
-    text-align: center;
-    padding: 1rem;
-    opacity: 1;
-    transition: all 1s ease-in
-  }
-  .section .burger:has(input:checked) + nav ul li{
-    font-size: 0.9rem;
-    color: rgb(134, 46, 134);
-    padding: 0.5rem;
-    border-bottom: 1px solid deeppink;
-  }
-  .section .burger:has(input:checked) {
-    background-color: rgb(189, 68, 68);
-    width: 0;
-    opacity: 0;
-  }
-  .section .burger {
+  .burger {
     display: flex;
     flex-direction: column;
     gap: 5px;
     position: absolute;
-    right: 9rem;
-    top: 3rem;
+    right: 70px;
+    top: 1rem;
+    cursor: pointer;
+} 
+  .burger input {
+      appearance: none;
   }
-  .section .burger input {
-    appearance: none;
+  .burger input:checked {
+      opacity: 0;
+      width: 0;
   }
+  /* 45 degrees rotation when input is checked */
+  .burger:has(input:checked)::before {
+      rotate: 45deg;
+      width: 43px; 
+  }
+  .burger:has(input:checked)::after {
+      rotate: -45deg; 
+      width: 43px; 
+  } 
+
+ /* display: block; this shows the nav that was hidden  */
+ .burger:has(input:checked) + ul {
+  display: block;                                
+  top: 7rem; 
+  background-color: #945e3f;
+  position: absolute; 
+  left: 5rem;
+  right: 1rem; 
+  text-align: center;
+  padding: 1rem 0;
+  opacity: 1; 
+  transition: all 1s ease-in; 
+} 
+.burger:has(input:checked) + ul li {
+font-size: 1.5rem;
+color: rgb(72, 150, 41);
+padding: 0.5rem;
+border-bottom: 1px solid rgb(155, 39, 101);
+}
+  /* hamburger menu */
+
   .section {
     grid-template-columns: 1fr 1fr;
     padding-top: 2rem;
-    height: 40vh;
+    height: 45vh;
     width: 100%;
   }
   .section p {
@@ -2311,10 +2331,10 @@ img {
   }
   .info {
     grid-template-columns: 1fr;
-    height: 10vh;
+    height: 7vh;
   }
   .info .keyword input {
-    width: 47vw;
+    width: 50vw;
     position: relative;
     left: 7.3rem;
     top: 0.6rem;
@@ -2344,25 +2364,25 @@ img {
   }
   .ph button {
     font-size: 2rem;
-    margin-top: 0rem;
     padding: 5rem 5rem;
-    margin-left: 0.3rem;
   }
   .ph .b {
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    padding-right: 22rem;
-    margin-bottom: 4rem;
+    padding-right: 23rem;
+    padding-bottom: 3rem;
   }
   .ph .p p:first-child {
     font-size: 2.3rem;
-    margin-left: 21rem;
+    text-align: center;
+    margin-left: 0;
+    padding-right: 13rem;
   }
   .ph .p p:nth-child(2) {
     font-size: 1.5rem;
-    margin-left: 5.1rem;
+    text-align: center;
     width: 63vw;
+    margin-bottom: 0;
+    padding-left: 18.5rem;
   }
 .ph button {
   font-size: 1.3rem;
@@ -2382,43 +2402,43 @@ img {
 }
 .phome .pprice1 {
   position: absolute;
-  top: 63.7rem;
-  left: 39.9rem;
+  top: 73.7rem;
+  left: 13.9rem;
 }
 .phome .pamt1 {
   position: absolute;
-  top: 71.9rem;
-  left: 7.3rem;
+  top: 82.5rem;
+  left: 8rem;
 }
 .phome .pprice2 {
   position: absolute;
-  top: 63.7rem;
-  left: 15.9rem;
+  top: 73.7rem;
+  left: 34.9rem;
 }
 .phome .pamt2 {
   position: absolute;
-  top: 71.9rem;
-  left: 31.3rem;
+  top: 82.5rem;
+  left: 29rem;
 }
 .phome .pprice3 {
   position: absolute;
-  top: 86.7rem;
-  left: 15.9rem;
+  top: 96.7rem;
+  left: 13.9rem;
 }
 .phome .pamt3 {
   position: absolute;
-  top: 95rem;
-  left: 7.3rem;
+  top: 105.9rem;
+  left: 8.3rem;
 }
 .phome .pprice4 {
   position: absolute;
-  top: 86.7rem;
-  left: 39.9rem;
+  top: 96.7rem;
+  left: 34.9rem;
 }
 .phome .pamt4 {
   position: absolute;
-  top: 95rem;
-  left: 31.3rem;
+  top: 105.5rem;
+  left: 29.3rem;
 }
 .Amazing {
   grid-template-columns: 1fr 1fr;
@@ -2432,23 +2452,23 @@ img {
 }
 .ph .Amazing p:first-child {
   position: absolute;
-  bottom: -22rem;
-  left: 8rem;
+  bottom: -15rem;
+  left: 7rem;
 }
 .ph .Amazing p:nth-child(2) {
   position: absolute;
-  bottom: -22rem;
-  left: 33rem;
+  bottom: -15rem;
+  left: 30rem;
 }
 .ph .Amazing p:nth-child(3) {
   position: absolute;
-  bottom: -45.5rem;
-  left: 11rem;
+  bottom: -38.5rem;
+  left: 10rem;
 }
 .ph .Amazing p:nth-child(4) {
   position: absolute;
-  bottom: -45.5rem;
-  left: 33rem;
+  bottom: -38.5rem;
+  left: 30rem;
 }
 .ph .icon {
   grid-template-columns: 1fr 1fr;
@@ -2465,23 +2485,23 @@ img {
 }
 .ph .icon p:first-child {
   position: absolute;
-  bottom: -22.7rem;
-  left: -6rem;
+  bottom: -15.7rem;
+  left: -5rem;
 }
 .ph .icon p:nth-child(2) {
   position: absolute;
-  bottom: -22.7rem;
-  left: 18rem;
+  bottom: -15.7rem;
+  left: 16rem;
 }
 .ph .icon p:nth-child(3) {
   position: absolute;
-  bottom: -46rem;
-  left: -6rem;
+  bottom: -39rem;
+  left: -5rem;
 }
 .ph .icon p:nth-child(4) {
   position: absolute;
-  bottom: -46rem;
-  left: 18rem;
+  bottom: -39rem;
+  left: 16rem;
 }
 .ph .names {
   grid-template-columns: 1fr 1fr;
@@ -2497,23 +2517,23 @@ img {
 }
 .ph .names p:first-child {
   position: absolute;
-  bottom: -29.3rem;
-  left: 6rem;
+  bottom: -22.3rem;
+  left: 7rem;
 }
 .ph .names p:nth-child(2) {
   position: absolute;
-  bottom: -29.3rem;
-  left: 30rem;
+  bottom: -22.3rem;
+  left: 28rem;
 }
 .ph .names p:nth-child(3) {
   position: absolute;
-  bottom: -52.5rem;
-  left: 6rem;
+  bottom: -45.5rem;
+  left: 7rem;
 }
 .ph .names p:nth-child(4) {
   position: absolute;
-  bottom: -52.5rem;
-  left: 30rem;
+  bottom: -45.5rem;
+  left: 28rem;
 }
  .images {
     grid-template-columns: 1fr 1fr;
@@ -2522,13 +2542,15 @@ img {
     margin-left: 28rem;
     margin-right: 35rem;
     margin-bottom: -6.9rem;
+    position: relative;
   }
   .images img {
     height: 13rem;
-    width: 17rem;
+    width: 14rem;
     margin-bottom: 10rem;
     margin-top: 0rem;
     margin-left: 5rem;
+    position: relative;
   }
   .images1 {
     position: relative;
@@ -2537,12 +2559,13 @@ img {
   .images1::before {
     content: '';
     height: 9rem;
-    width: 17rem;
+    width: 14rem;
     background-color: black;
     position: absolute;
     bottom: 17.3rem;
     left: 5rem;
     z-index: 1;
+    position: relative;
     opacity: 0.65;
     background: linear-gradient(to bottom, transparent, black);
   }
@@ -2551,35 +2574,37 @@ img {
 }
 .team .staff {
     grid-template-columns: 1fr 1fr;
-    left: 2rem;
+    place-items: center;
   }
 .team .intro p:first-child {
   font-size: 2.2rem;
-  margin-left: 17rem;
-  margin-top: 5rem;
+  text-align: center;
+  margin-right: 0;
+  padding-right: 35rem;
 }
 .team .intro p:nth-child(2) {
   font-size: 1.3rem;
   width: 30rem;
-  margin-left: 17rem;
-  margin-bottom: 2rem;
+  text-align: center;
+  margin-left: 0;
+  padding-left: 18rem;
 }
 .team img {
-  height: 22rem;
-  width: 19rem;
-  left: -3rem;
+  height: 20rem;
+  width: 16rem;
   position: relative;
 }
 .team .staff {
   position: relative;
+  padding-right: 3rem;
 }
 .staff .staff1::before {
   content: '';
   height: 9rem;
-  width: 19rem;
+  width: 16rem;
   background-color: black;
   position: absolute;
-  left: -3rem;
+  left: 1.7rem;
   bottom: 5rem;
   z-index: 1;
   opacity: 0.4;
@@ -2588,11 +2613,11 @@ img {
   .staff .staff1::after {
     content: '';
     height: 9rem;
-    width: 19rem;
+    width: 16rem;
     background-color: black;
     position: absolute;
-    bottom: 32.3rem;
-    left: -3rem;
+    bottom: 30.5rem;
+    left: 1.7rem;
     z-index: 1;
     opacity: 0.3;
     background: linear-gradient(to bottom, transparent, black);
@@ -2600,11 +2625,11 @@ img {
   .staff .ppost1::before {
     content: '';
     height: 9rem;
-    width: 19rem;
+    width: 16rem;
     background-color: black;
     position: absolute;
-    top: -6rem;
-    left: 18rem;
+    top: -7rem;
+    left: 16.5rem;
     z-index: -1;
     opacity: 0.65;
     background: linear-gradient(to bottom, transparent, black);
@@ -2612,11 +2637,11 @@ img {
   .staff .ppost2::before {
     content: '';
     height: 9rem;
-    width: 19rem;
+    width: 16rem;
     background-color: black;
     position: absolute;
-    left: -4.8rem;
-    bottom: -29rem;
+    left: -4rem;
+    bottom: -26rem;
     z-index: -1;
     opacity: 0.9;
     background: linear-gradient(to bottom, transparent, black);
@@ -2631,97 +2656,98 @@ img {
 }
 .team .staff .pname1 {
   position: absolute;
-  left: 2.5rem;
-  top: 17rem;
+  left: 4.5rem;
+  top: 16rem;
   z-index: 4;
 }
 .team .staff .ppost1 {
   position: absolute;
-  left: 2.5rem;
-  top: 19rem;
+  left: 4.5rem;
+  top: 18rem;
   z-index: 3;
 }
 .team .staff .pname2 {
   position: absolute;
   z-index: 4;
   left: 25rem;
-  top: 17rem;
+  top: 16rem;
 }
 .team .staff .ppost2 {
   position: absolute;
   z-index: 3;
   left: 25rem;
-  top: 19rem;
+  top: 18rem;
 }
 .team .staff .pname3 {
   position: absolute;
   z-index: 3;
-  left: 2rem;
-  top: 43.5rem;
+  left: 5rem;
+  top: 41.5rem;
 }
 .team .staff .ppost3 {
   position: absolute;
   z-index: 3;
-  left: 2rem;
-  top: 46rem;
+  left: 5rem;
+  top: 43rem;
 }
 .team .staff .pname4 {
   position: absolute;
-  left: 25.5rem;
-  top: 43.5rem;
+  left: 24.5rem;
+  top: 41.5rem;
   z-index: 3;
 }
 .team .staff .ppost4 {
   position: absolute;
-  left: 23.5rem;
-  top: 46rem;
+  left: 24.5rem;
+  top: 43rem;
   z-index: 3;
 }
 .lotsofimages .limage {
     grid-template-columns: 1fr 1fr;
-    margin-right: 21rem;
+    justify-content: center;
     position: relative;
-    left: 1rem;
+    left: 3.9rem;
   }
   .lotsofimages {
     margin: 0 -12rem;
   }
   .limagep p:first-child {
     font-size: 2.2rem;
-    margin-bottom: 1rem;
-    margin-left: 17rem;
+    text-align: center;
+    margin-left: 0;
+    padding-right: 9rem;
   }
   .limagep p:last-child {
     font-size: 1.3rem;
-    margin-bottom: 3rem;
-    width: 40%;
-    margin-left: 17rem;
+    text-align: center;
+    width: 42%;
+    padding-left: 4rem;
   }
   .limage img {
     height: 15rem;
-    width: 20rem;
+    width: 17rem;
   } 
   .a1, .a3, .a5, .a7, .a9, .a11, .a13, .a15, .a17 {
-    font-size: 1rem;
+    font-size: 0.9rem;
     z-index: 1;
   }
   .a1 {
-    top: 1rem;
+    top: 2rem;
   }
   .a3 {
-    top: 1rem;
+    top: 2rem;
   } 
   .a5 {
-    top: 25rem;
+    top: 26rem;
   }
   .a7 {
-    top: 25rem;
+    top: 26rem;
   }
   .a9 {
-    top: 49rem;
+    top: 50rem;
   }
   .a11 {
-    top: 49rem;
+    top: 50rem;
   }
   .a13 {
     top: 75rem;
@@ -2730,56 +2756,56 @@ img {
     top: 75rem;
   }
   .a17 {
-    top: 99rem;
+    top: 98rem;
   }
   .a2, .a4, .a6, .a8, .a10, .a12, .a14, .a16, .a18 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding: 3px;
     margin-left: 11.5rem;
     z-index: 1;
   }
   .a2 {
-    top: 1rem;
-    left: 1rem;
+    top: 2rem;
+    left: -1rem;
   }
   .a4 {
-    top: 1rem;
-    left: 24rem;
+    top: 2rem;
+    left: 20.3rem;
   }
   .a6 {
-    top: 25rem;
-    left: 1rem;
+    top: 26rem;
+    left: -1rem;
   }
   .a8 {
-    top: 25rem;
-    left: 24rem;
+    top: 26rem;
+    left: 20.3rem;
   }
   .a10 {
-    top: 49rem;
-    left: 1rem;
+    top: 50rem;
+    left: -1rem;
   }
   .a12 {
-    top: 49rem;
-    left: 24rem;
+    top: 50rem;
+    left: 20.3rem;
   }
   .a14 {
     top: 75rem;
-    left: 1rem;
+    left: -1rem;
   }
   .a16 {
     top: 75rem;
-    left: 24rem;
+    left: 20.3rem;
   }
   .a18 {
-    top: 99rem;
-    left: 1rem;
+    top: 98rem;
+    left: -1rem;
   }
   .allhp {
-   width: 21rem;
+   width: 17.9rem;
   }
   
   .allp p:first-child {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     padding-left: 2rem;
   }
   .allto p:first-child {
@@ -2791,123 +2817,138 @@ img {
   }
   .allto {
     display: flex;
-    gap: 50px;
+    gap: 17px;
     margin-top: 0rem;
     margin-bottom: 0.2rem;
   }
   button {
     font-size: 1.3rem;
-    margin-left: 17rem;
+    margin-left: 20rem;
     padding: 9px 50px;
     margin-bottom: 4rem;
   }
-.col3i {
-  height: 103vh;
-  width: 90%;
-  margin: 0;
-}
-.col3ip p:first-child {
-  font-size: 2.1rem;
-  padding-top: 3rem;
-  margin-left: -27rem;
-}
-.col3ip p:nth-child(2) {
-  font-size: 1rem;
-  margin-top: -10px;
-  margin-left: -16rem;
-}
-.col3if {
-  flex-direction: column;
-  gap: 10px;
-}
-.col3i1 {
-  background: whitesmoke;
-  width: 70vw;
-  align-self: center;
-}
-.col3i2 {
-  background: whitesmoke;
-  width: 70vw;
-  align-self: center;
-}
-.col3i3 {
-  background: whitesmoke;
-  width: 70vw;
-  align-self: center;
-}
-.col3if i {
-  font-size: 2.5rem;
-}
-.col3i1 i {
-  bottom: 24rem;
-  left: 7rem;
-}
-.col3i2 i {
-  bottom: 9rem;
-  left: 7rem;
-}
-.col3i3 i {
-  bottom: -5rem;
-  left: 7rem;
-}
-.col3i1 p:nth-child(2) {
-  font-size: 1.2rem;
-  bottom: 20rem;
-  left: 0rem;
-}
-.col3i1 p:nth-child(3) {
-  font-size: 1.1rem;
-  width: 55vw;
-  bottom: 17rem;
-  left: -6rem;
-}
-.col3i2 p:nth-child(2) {
-  font-size: 1.2rem;
-  bottom: 5rem;
-  left: 3rem;
-}
-.col3i2 p:nth-child(3) {
-  font-size: 1.1rem;
-  width: 55vw;
-  bottom: 2rem;
-  left: -7rem;
-}
-.col3i3 p:nth-child(2) {
-  font-size: 1.2rem;
-  bottom: -9.1rem;
-  left: 4rem;
-}
-.col3i3 p:nth-child(3) {
-  font-size: 1.1rem;
-  width: 55vw;
-  bottom: -12rem;
-  left: -7rem;
-}
-.col3if button {
-  font-size: 1.1rem;
-  margin-left: 0rem;
-  margin-right: 12.3rem;
-  width: 70vw;
-  margin-top: 11rem;
-  margin-bottom: 1rem;
-}
+  .col3i {
+    height: 77vh;
+    width: 37rem;
+    margin-left: 0rem;
+    padding-left: 7rem;
+    padding-right: 17rem;
+  }
+  .col3ip p:first-child {
+    font-size: 2.3rem;
+    padding-right: 21rem;
+    padding-top: 5rem;
+    margin-left: 0;
+  }
+  .col3ip p:nth-child(2) {
+    font-size: 1.2rem;
+    padding-bottom: 0rem;
+    padding-left: 1rem;
+    width: 79%;
+    margin-left: 0;
+  }
+  .col3if {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+  }
+  .col3i1 {
+    background: whitesmoke;
+    width: 70vw;
+    align-self: center;
+    position: relative;
+  }
+  .col3i2 {
+    background: whitesmoke;
+    width: 70vw;
+    align-self: center;
+    position: relative;
+  }
+  .col3i3 {
+    background: whitesmoke;
+    width: 70vw;
+    align-self: center;
+    position: relative;
+  }
+  .col3if i {
+    font-size: 2rem;
+  }
+  .col3i1 i {
+    bottom: 8rem;
+    left: 16rem;
+  }
+  .col3i2 i {
+    bottom: 7.5rem;
+    left: 16rem;
+  }
+  .col3i3 i {
+    bottom: 8rem;
+    left: 16rem;
+  }
+  
+  .col3i1 p:nth-child(2) {
+    font-size: 1rem;
+    bottom: 5rem;
+    width: 50vw;
+    left: 12rem;
+  }
+  .col3i1 p:nth-child(3) {
+    font-size: 0.9rem;
+    width: 55vw;
+    bottom: 2rem;
+    left: 4rem;
+  }
+  .col3i2 p:nth-child(2) {
+    font-size: 1rem;
+    bottom: 4.7rem;
+    left: 13rem;
+  }
+  .col3i2 p:nth-child(3) {
+    font-size: 0.9rem;
+    width: 55vw;
+    bottom: 1.7rem;
+    left: 4rem;
+  }
+  .col3i3 p:nth-child(2) {
+    font-size: 1rem;
+    bottom: 5rem;
+    left: 13rem;
+  }
+  .col3i3 p:nth-child(3) {
+    font-size: 0.9rem;
+    width: 55vw;
+    bottom: 2rem;
+    left: 4rem;
+  }
+  .col3if button {
+    font-size: 0.8rem;
+    margin-left: 0rem;
+    margin-right: 12.3rem;
+    width: 70vw;
+    margin-top: 8rem;
+    margin-bottom: 1rem;
+  }
+  
 .imat {
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-left: 24rem;
+    gap: 1.5rem;
   }
   .ima {
-    margin-left: -14rem;
+    /*margin-left: -14rem;*/
   }
   .imatp p:first-child {
     font-size: 2.5rem;
-    margin-left: 20rem;
-    margin-top: 0rem;
+    margin-left: 0;
+    padding-left: 7rem;
+    padding-top: 3rem;
   }
   .imatp p:last-child {
     font-size: 1.3rem;
+    margin-left: 0;
     width: 50rem;
-    margin-left: 20rem;
+    padding-left: 6.9rem;
   }
   img {
     height: 15rem;
@@ -2917,24 +2958,24 @@ img {
     width: 20rem;
   }
   .im p:first-child {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   .imgroup p:last-child {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   .imgroup {
     display: flex;
   }
   .imgp p:first-child {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     width: 19rem;
   }
   .imgp p:nth-child(2) {
-    font-size: 1.1rem;
+    font-size: 1rem;
     width: 17rem;
   }
   .imgp p:nth-child(3) {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   .imgp p:last-child {
     font-size: 1rem;
@@ -2976,7 +3017,7 @@ img {
     font-size: 2rem;
   }
   .fo3 ul dl {
-    font-size: 1.2rem;
+    font-size: 1.2rem; 
   }
   .fo3 ul dt {
     font-size: 1.2rem;
@@ -3022,7 +3063,7 @@ img {
     width: 2rem;
     font-size: large;
     position: absolute;
-    top: 9rem;
-    right: 39rem;
+    top: 11rem;
+    right: 35rem;
   }
 }
